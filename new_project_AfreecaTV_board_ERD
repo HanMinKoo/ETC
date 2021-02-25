@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-02-25T07:33:02.597Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36" etag="6I4nIdFc2hc_Tfy8mIwJ" version="14.4.2" type="github">
+<mxfile host="app.diagrams.net" modified="2021-02-25T08:26:47.757Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36" etag="DJqUFg0PlKrpg61Ntc1l" version="14.4.2" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
-    <mxGraphModel dx="2881" dy="2283" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="2980" dy="2067" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -16,8 +16,8 @@
             <mxPoint x="460" y="205" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="C-vyLk0tnHw3VtMMgP7b-2" value="enzo_board_content_image_path_tbl(게시물 내용 이미지 경로)" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
-          <mxGeometry x="760" y="-14" width="550" height="164" as="geometry" />
+        <mxCell id="C-vyLk0tnHw3VtMMgP7b-2" value="enzo_board_image_tbl(게시물 이미지 정보 테이블)" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
+          <mxGeometry x="723" y="-14" width="550" height="164" as="geometry" />
         </mxCell>
         <mxCell id="C-vyLk0tnHw3VtMMgP7b-3" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;" parent="C-vyLk0tnHw3VtMMgP7b-2" vertex="1">
           <mxGeometry y="30" width="550" height="30" as="geometry" />
@@ -37,8 +37,8 @@
         <mxCell id="C-vyLk0tnHw3VtMMgP7b-8" value="board_list_idx BIGINT(11) NOT NULL COMMENT &#39;이미지를 포함하고 있는 게시물 pk 값&#39;&#xa;&#xa;name VARCHAR(30) NOT NULL COMMENT &#39;이미지 이름&#39;&#xa;&#xa;path VARCHAR(255) NOT NULL COMMENT &#39;이미지 경로&#39;&#xa;&#xa;extension VARCHAR(5) NOT NULL COMMENT &#39;확장자 명&#39;" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="C-vyLk0tnHw3VtMMgP7b-6" vertex="1">
           <mxGeometry x="30" width="520" height="104" as="geometry" />
         </mxCell>
-        <mxCell id="C-vyLk0tnHw3VtMMgP7b-13" value="enzo_board_comment_tbl (게시물 댓글) " style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
-          <mxGeometry x="762" y="180" width="678" height="380" as="geometry" />
+        <mxCell id="C-vyLk0tnHw3VtMMgP7b-13" value="enzo_board_comment_tbl (게시물 댓글 정보 테이블) " style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
+          <mxGeometry x="725" y="180" width="678" height="380" as="geometry" />
         </mxCell>
         <mxCell id="C-vyLk0tnHw3VtMMgP7b-14" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;" parent="C-vyLk0tnHw3VtMMgP7b-13" vertex="1">
           <mxGeometry y="30" width="678" height="30" as="geometry" />
@@ -58,7 +58,7 @@
         <mxCell id="C-vyLk0tnHw3VtMMgP7b-19" value="board_list_idx BIGINT(11) NOT NULL COMMENT &#39;댓글이 작성된 게시물의 pk 값&#39;&#xa;&#xa;user_idx BIGINT(11) NOT NULL COMMENT &#39;댓글을 작성한 유저의 PK 값, USER 테이블 PK 값&#39;&#xa;&#xa;content TEXT NOT NULL COMMENT &#39;입력 내용&#39;&#xa;&#xa;up_count BIGINT(11) NOT NULL DEFAULT 0 COMMENT &#39;UP 개수&#39;&#xa;&#xa;create_date DATETIME NOT NULL DEFAULT NOW() COMMENT &#39;댓글 작성 날짜&#39;&#xa;&#xa;image_name VARCHAR(30) DEFAULT NULL COMMENT &#39;이미지 이름&#39;&#xa;&#xa;image_path VARCHAR(255) NOT NULL COMMENT &#39;이미지 경로&#39;&#xa;&#xa;image_extension VARCHAR(5) NOT NULL COMMENT &#39;확장자 명&#39;&#xa;&#xa;layer TINYINT DEFAULT 0 COMMENT &#39;댓글이면 0(부모), 대댓글이면 1(자식)&#xa;&#xa;group_number BIGINT(11) NOT NULL AUTO_INCREMENT COMMENT &#39;댓글과 대댓글의 그룹, 댓글의 idx 값과 동일&#39;)&#xa;&#xa;group_sequence BIGINT(11) NOT NULL COMMENT &#39;대댓글을 작성한 순서&#39;" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" parent="C-vyLk0tnHw3VtMMgP7b-17" vertex="1">
           <mxGeometry x="40" width="638" height="320" as="geometry" />
         </mxCell>
-        <mxCell id="C-vyLk0tnHw3VtMMgP7b-23" value="enzo_board_list_tbl (게시글 정보) " style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
+        <mxCell id="C-vyLk0tnHw3VtMMgP7b-23" value="enzo_board_tbl (게시글 정보 테이블) " style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
           <mxGeometry x="70" y="-61.05" width="590" height="281.05" as="geometry" />
         </mxCell>
         <mxCell id="C-vyLk0tnHw3VtMMgP7b-24" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;" parent="C-vyLk0tnHw3VtMMgP7b-23" vertex="1">
@@ -80,7 +80,7 @@
           <mxGeometry x="50" width="540" height="221" as="geometry" />
         </mxCell>
         <mxCell id="uIJr2xNSNmu3yCioKSus-4" value="FK&lt;br&gt;INDEX" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="761" y="246" width="40" height="20" as="geometry" />
+          <mxGeometry x="724" y="246" width="40" height="20" as="geometry" />
         </mxCell>
         <mxCell id="uIJr2xNSNmu3yCioKSus-17" value="admin_user_tbl (운영자 어드민 등록 리스트) " style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
           <mxGeometry x="95" y="515" width="565" height="135" as="geometry" />
@@ -140,13 +140,13 @@
           <mxGeometry x="77" y="138.95" width="40" height="20" as="geometry" />
         </mxCell>
         <mxCell id="uIJr2xNSNmu3yCioKSus-40" value="FK&lt;br&gt;INDEX" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="762" y="277" width="40" height="20" as="geometry" />
+          <mxGeometry x="725" y="277" width="40" height="20" as="geometry" />
         </mxCell>
         <mxCell id="uIJr2xNSNmu3yCioKSus-41" value="INDEX" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="77" y="109.95" width="40" height="20" as="geometry" />
         </mxCell>
         <mxCell id="uIJr2xNSNmu3yCioKSus-42" value="INDEX" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="762" y="337" width="40" height="20" as="geometry" />
+          <mxGeometry x="725" y="337" width="40" height="20" as="geometry" />
         </mxCell>
         <mxCell id="uIJr2xNSNmu3yCioKSus-53" value="" style="endArrow=ERone;html=1;entryX=0.441;entryY=1.017;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.418;exitY=0.025;exitDx=0;exitDy=0;exitPerimeter=0;startArrow=ERzeroToOne;startFill=1;startSize=10;endSize=10;endFill=0;" parent="1" source="uIJr2xNSNmu3yCioKSus-17" target="uIJr2xNSNmu3yCioKSus-28" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -168,12 +168,12 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="uIJr2xNSNmu3yCioKSus-60" value="FK&lt;br&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="750" y="48" width="50" height="20" as="geometry" />
+          <mxGeometry x="713" y="48" width="50" height="20" as="geometry" />
         </mxCell>
         <mxCell id="NlZZj0qxPboZY6nPJNof-5" value="UK&lt;br&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="762" y="506" width="40" height="20" as="geometry" />
+          <mxGeometry x="725" y="506" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="NlZZj0qxPboZY6nPJNof-6" value="board_up_list(유저가 게시글 up 누른 목록) " style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
+        <mxCell id="NlZZj0qxPboZY6nPJNof-6" value="board_up_tbl(유저가 게시글 up 누른 목록) " style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
           <mxGeometry x="-700" y="-14" width="678" height="174" as="geometry" />
         </mxCell>
         <mxCell id="NlZZj0qxPboZY6nPJNof-7" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;" vertex="1" parent="NlZZj0qxPboZY6nPJNof-6">
@@ -200,7 +200,7 @@
         <mxCell id="NlZZj0qxPboZY6nPJNof-21" value="FK&lt;br&gt;INDEX" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="-697" y="78" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="NlZZj0qxPboZY6nPJNof-31" value="board_comment_up_list(유저가 댓글 up 누른 목록)  " style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
+        <mxCell id="NlZZj0qxPboZY6nPJNof-31" value="board_comment_up_tbl(유저가 댓글 up 누른 목록)  " style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
           <mxGeometry x="-699" y="197" width="678" height="173" as="geometry" />
         </mxCell>
         <mxCell id="NlZZj0qxPboZY6nPJNof-32" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;" vertex="1" parent="NlZZj0qxPboZY6nPJNof-31">
@@ -251,7 +251,7 @@
             <mxPoint x="76.99999999999999" y="26.02000000000017" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="NlZZj0qxPboZY6nPJNof-44" value="search_list(유저 검색 기록 저장) " style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
+        <mxCell id="NlZZj0qxPboZY6nPJNof-44" value="search_list_tbl(유저 검색 기록 저장) " style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
           <mxGeometry x="-630" y="445" width="678" height="210" as="geometry" />
         </mxCell>
         <mxCell id="NlZZj0qxPboZY6nPJNof-45" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;" vertex="1" parent="NlZZj0qxPboZY6nPJNof-44">
